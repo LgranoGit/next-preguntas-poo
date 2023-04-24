@@ -2,9 +2,7 @@ import Pregunta from "../componentes/pregunta";
 import Opciones from "../componentes/opciones";
 import Footer from "../componentes/footer";
 import { UI } from "@/lib/classUsuarioInterfase";
-import { useEffect, useState } from "react";
-import { Cuestionario } from "@/lib/classCuestionario";
-import { preguntas } from "@/datos/todasLasPreguntas";
+import { useState } from "react";
 
 function Index() {
   const [ui, setUI] = useState(new UI());
@@ -15,7 +13,7 @@ function Index() {
     if (ui.cuestionario.isEnded()) {
       setTxtPreg(ui.showScores().toString());
       setOpciones([]);
-      console.log("finalizo")
+      console.log("finalizo");
     } else {
       setTxtPreg(ui.showPregunta());
       setOpciones(ui.showOpciones());
